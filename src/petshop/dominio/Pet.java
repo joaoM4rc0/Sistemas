@@ -1,5 +1,8 @@
 package petshop.dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pet {
     private String tipo;
     private int identificador;
@@ -8,7 +11,10 @@ public class Pet {
         this.identificador = identificador;
         this.tipo = tipo;
     }
-
+    public boolean foiTosado(boolean foiTosado) {
+        System.out.println(foiTosado ? "o animal foi tosado" : "o animal nao foi tosado");
+        return foiTosado;
+    }
     @Override
     public String toString() {
         return "Pet{" +

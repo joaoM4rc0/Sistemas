@@ -1,42 +1,30 @@
 package petshop.dominio;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cliente {
     private String name;
     private int idade;
     private Pet pet;
-    private List<String> diagnosticoDoPet;
-    public static final class ClienteBuilder {
-        private int idade;
-        private String name;
-        private Pet pet;
+    private List<String> diagnosticoDoPet = new ArrayList<>();
 
-        public static ClienteBuilder aCliente() {
-            return new ClienteBuilder();
-        }
+    public Cliente(String name, int idade, Pet pet) {
+        this.name = name;
+        this.idade = idade;
+        if (pet == null) throw new IllegalArgumentException("o cliente precisa de um pet");
+        if (String.valueOf(pet).isEmpty()) throw new IllegalArgumentException("o valor de pet nao pode ser vazio");
+        this.pet = pet;
+    }
 
-        public ClienteBuilder withIdade(int idade) {
-            this.idade = idade;
-            return this;
-        }
-
-        public ClienteBuilder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public ClienteBuilder withPet(Pet pet) {
-            this.pet = pet;
-            return this;
-        }
-
-        public Cliente build() {
-            Cliente cliente = new Cliente();
-            cliente.idade = this.idade;
-            cliente.name = this.name;
-            cliente.pet = this.pet;
-            return cliente;
+    public void recebeDiagnostico(List<String> diagnosticos) {
+        String diagnostico = String.join("", diagnosticos);
+        diagnosticoDoPet.add(diagnostico);
+    }
+    public void exibeDiagnostico() {
+        for (String d : diagnosticoDoPet) {
+            System.out.println("esse é o diagnostico do seu pet: " + d);
         }
     }
 
@@ -48,11 +36,7 @@ public class Cliente {
                 ", pet=" + pet +
                 '}';
     }
-    public void recebeDiagnostico(List<String> diagnostico) {
-        this.diagnosticoDoPet.addAll(diagnostico);
 
-    }
-    public void exibeDiagnostico
     public int getIdade() {
         return idade;
     }
