@@ -6,14 +6,21 @@ import java.util.List;
 public class Pet {
     private String tipo;
     private int identificador;
-
+    private boolean foitosado = false;
     public Pet(int identificador, String tipo) {
         this.identificador = identificador;
         this.tipo = tipo;
     }
-    public boolean foiTosado(boolean foiTosado) {
-        System.out.println(foiTosado ? "o animal foi tosado" : "o animal nao foi tosado");
-        return foiTosado;
+    public void foiTosado(boolean foiTosado) {
+         this.foitosado = foiTosado;
+    }
+    public void VerificaSePetFoiTosado() {
+        if (!this.foitosado) {
+            System.out.println("o animal foi tosado");
+            return;
+        }
+        System.out.println("o animal nao foi tosado");
+
     }
     @Override
     public String toString() {
