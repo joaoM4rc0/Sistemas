@@ -24,7 +24,7 @@ public class Cliente {
     }
     public void exibeDiagnostico() {
         for (String d : diagnosticoDoPet) {
-            System.out.println("esse é o diagnostico do seu pet: " + d);
+            System.out.println("esse é o diagnostico: o seu " + d);
         }
     }
 
@@ -45,7 +45,7 @@ public class Cliente {
         return name;
     }
 
-    public Pet getPet() {
-        return pet;
+    public void getPet() {
+        System.out.println(pet.toString());
     }
 }
