@@ -1,35 +1,31 @@
-package Petshop.dominio;
+package petshop.FuncionarioModel;
 
-
-import java.util.Objects;
-
-public class Funcionario {
+public class Funcionarios {
     private String name;
+    private int idade;
     private double salario;
 
-    public Funcionario(String name, double salario) {
+    public Funcionarios(String name, int idade, double salario) {
         this.name = name;
+        this.idade = idade;
         this.salario = salario;
     }
 
     @Override
     public String toString() {
-        return "Funcionario{" +
+        return "Funcionarios{" +
                 "name='" + name + '\'' +
+                ", idade=" + idade +
                 ", salario=" + salario +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Funcionario that = (Funcionario) o;
-        return Double.compare(salario, that.salario) == 0 && Objects.equals(name, that.name);
+    public int getIdade() {
+        return idade;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, salario);
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public String getName() {

@@ -1,0 +1,7 @@
+petshop :
+   pet;
+        gato, cachorro....
+    Funcionarios;
+        medicoVeterinario, tosador
+    Cliente;
+    o pet tem que ficar no cadastro do dono
