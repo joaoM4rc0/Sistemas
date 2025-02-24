@@ -1,21 +1,19 @@
 package petshop.dominio;
 
 import petshop.FuncionarioModel.Funcionarios;
+import petshop.seviceDiagnostico.DiagnosticoMedico;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MedicoVeterinario extends Funcionarios {
-
     public MedicoVeterinario(String name, int idade, double salario) {
         super(name, idade, salario);
     }
-    public List<String> diagnosticoDoPet(Pet pet, String diagnostico) {
-        List<String> listaDDiagnostico = new ArrayList<>();
-        if (diagnostico == null) throw new IllegalArgumentException("lista de disgnostico nao pode ser null");
-        if (diagnostico.isEmpty()) throw new IllegalArgumentException("lista de diagnostico nao pode ser vazia");
-        listaDDiagnostico.add(pet.getTipo());
-        listaDDiagnostico.add(diagnostico);
-        return listaDDiagnostico;
+    public void diagnosticoMedico(Pet pet,String diagnostico) {
+        DiagnosticoMedico.recebeDiagnostico(pet, diagnostico);
+    }
+    public void exibeDiagnostico() {
+        DiagnosticoMedico.exibeDiagnostico();
     }
 }

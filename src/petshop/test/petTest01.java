@@ -11,8 +11,7 @@ public class petTest01 {
         Pet pet = new Pet(1, "cachorro");
         Cliente cliente = new Cliente("joao", 18,pet);
         MedicoVeterinario medicoVeterinario = new MedicoVeterinario("dr. augusto", 38, 1500);
-        List<String> diagnosticoDoPet= medicoVeterinario.diagnosticoDoPet(pet, " precisa tomar tal remedio, tal horario");
-        cliente.recebeDiagnostico(diagnosticoDoPet);
-        cliente.exibeDiagnostico();
+        medicoVeterinario.diagnosticoMedico(pet, "o seu pet tem que tomar tal remedio tal horario");
+        medicoVeterinario.exibeDiagnostico();
     }
 }

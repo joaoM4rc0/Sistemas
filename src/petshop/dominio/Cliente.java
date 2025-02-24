@@ -1,6 +1,5 @@
 package petshop.dominio;
 
-import petshop.diagnostico.DiagnosticoPet;
 
 import java.util.ArrayList;
 import java.util.List;
