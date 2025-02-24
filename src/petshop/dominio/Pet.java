@@ -15,7 +15,7 @@ public class Pet {
          this.foitosado = foiTosado;
     }
     public void VerificaSePetFoiTosado() {
-        if (!this.foitosado) {
+        if (this.foitosado) {
             System.out.println("o animal foi tosado");
             return;
         }

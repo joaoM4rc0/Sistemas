@@ -9,8 +9,10 @@ import java.util.Map;
 
 public class DiagnosticoMedico {
     private static Map<Pet, String> diagnosticoDoPet = new LinkedHashMap<>();
-    public static void recebeDiagnostico(Pet pet,String diagnosticos) {
-        diagnosticoDoPet.put(pet, diagnosticos);
+    public static void recebeDiagnostico(Pet pet,String diagnostico) {
+        if (diagnostico == null) throw new IllegalArgumentException("lista de disgnostico nao pode ser null");
+        if (diagnostico.isEmpty()) throw new IllegalArgumentException("lista de diagnostico nao pode ser vazia");
+        diagnosticoDoPet.put(pet, diagnostico);
     }
     public static void exibeDiagnostico() {
         for(Map.Entry<Pet, String> pair: diagnosticoDoPet.entrySet()) {

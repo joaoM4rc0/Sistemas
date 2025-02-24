@@ -34,7 +34,7 @@ public class Cliente {
         return name;
     }
 
-    public void getPet() {
-        System.out.println(pet.toString());
+    public Pet getPet() {
+        return pet;
     }
 }
